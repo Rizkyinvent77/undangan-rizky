@@ -142,3 +142,40 @@ if(cover){
 
 
 });
+
+/* ==========================
+      SCROLL REVEAL
+========================== */
+
+
+const revealElements = document.querySelectorAll(".reveal");
+
+
+const revealOnScroll = () => {
+
+
+    revealElements.forEach((element)=>{
+
+
+        const windowHeight = window.innerHeight;
+
+        const elementTop = element.getBoundingClientRect().top;
+
+
+        if(elementTop < windowHeight - 100){
+
+            element.classList.add("show");
+
+        }
+
+
+    });
+
+
+};
+
+
+window.addEventListener("scroll", revealOnScroll);
+
+
+revealOnScroll();

@@ -590,3 +590,26 @@ body{
     transition:1s ease;
 
 }
+
+/* =========================
+      SCROLL ANIMATION
+========================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease;
+
+}
+
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
