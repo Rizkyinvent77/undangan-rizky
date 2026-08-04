@@ -42,11 +42,9 @@ body{
 }
 
 .content{
-
+    position: relative;
     max-width:500px;
-
     z-index:2;
-
 }
 
 .subtitle{
