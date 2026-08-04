@@ -13,8 +13,8 @@ body{
     height:100vh;
     background:
 linear-gradient(
-rgba(54,72,57,.40),
-rgba(54,72,57,.55)
+rgba(54,72,57,.30),
+rgba(54,72,57,.65)
 ),
 url("../assets/images/cover.jpg");
 
@@ -35,7 +35,7 @@ background-repeat:no-repeat;
     width:100%;
     max-width:600px;
     text-shadow:0 4px 20px rgba(0,0,0,.45);
-    transition:1s;
+    transition:all .5s ease;
 }
 
 .subtitle{
@@ -51,15 +51,25 @@ background-repeat:no-repeat;
 }
 
 h1{
+
     font-family:'Cormorant Garamond',serif;
-    font-size:68px;
+
+    font-size:72px;
+
     font-weight:600;
+
     line-height:1.1;
+
     margin:20px 0;
+
 }
 
 h1 span{
     display:block;
+    
+    font-size:48px;
+
+    margin:8px 0;
 }
 
 .date{
@@ -112,8 +122,11 @@ h1 span{
 }
 
 button{
+
     padding:18px 38px;
+
     border:none;
+
     border-radius:999px;
 
     background:#C8A96A;
@@ -121,19 +134,153 @@ button{
     color:white;
 
     font-size:17px;
+
     font-weight:500;
+
+    letter-spacing:1px;
 
     cursor:pointer;
 
     transition:.35s;
 
     box-shadow:0 10px 25px rgba(0,0,0,.18);
+
 }
 
 button:hover{
     transform:translateY(-4px);
+    box-shadow:0 18px 35px rgba(0,0,0,.28);
 }
 
 button:active{
     transform:scale(.97);
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    background:#F7F4EE;
+
+}
+
+.cover{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    ...
+}
+
+/* =========================
+        MEMPELAI
+========================= */
+
+.couple{
+
+    background:#F7F4EE;
+
+    color:#445248;
+
+    padding:90px 25px;
+
+}
+
+.container{
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.section-subtitle{
+
+    font-size:14px;
+
+    letter-spacing:6px;
+
+    color:#6F8972;
+
+    margin-bottom:12px;
+
+}
+
+.couple h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:52px;
+
+    margin-bottom:24px;
+
+}
+
+.intro{
+
+    line-height:1.9;
+
+    max-width:520px;
+
+    margin:0 auto 60px;
+
+}
+
+.person{
+
+    margin-bottom:35px;
+
+}
+
+.person img{
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:6px solid white;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.person h3{
+
+    margin-top:22px;
+
+    font-size:36px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-weight:600;
+
+}
+
+.person p{
+
+    margin-top:16px;
+
+    line-height:1.9;
+
+}
+
+.love{
+
+    font-size:38px;
+
+    color:#C8A96A;
+
+    margin:40px 0;
+
 }
