@@ -179,3 +179,33 @@ window.addEventListener("scroll", revealOnScroll);
 
 
 revealOnScroll();
+
+/* ==========================
+      LIGHTBOX
+========================== */
+
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImg = document.getElementById("lightbox-img");
+
+
+galleryImages.forEach((img)=>{
+
+    img.addEventListener("click",()=>{
+
+        lightbox.classList.add("show");
+
+        lightboxImg.src = img.src;
+
+    });
+
+});
+
+
+lightbox.addEventListener("click",()=>{
+
+    lightbox.classList.remove("show");
+
+});
