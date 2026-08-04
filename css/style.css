@@ -576,3 +576,17 @@ body{
     border:0;
 
 }
+
+/* =========================
+      OPEN ANIMATION
+========================= */
+
+.cover.hide{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:1s ease;
+
+}

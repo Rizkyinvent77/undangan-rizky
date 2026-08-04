@@ -111,8 +111,15 @@ document.addEventListener("DOMContentLoaded",()=>{
 
                 music.play();
 
-            }
+            } 
+            
+            const cover = document.querySelector(".cover");
 
+if(cover){
+
+    cover.classList.add("hide");
+
+}
 
             const coupleSection = document.querySelector(".couple");
 
