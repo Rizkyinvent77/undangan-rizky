@@ -11,7 +11,16 @@ body{
 .cover{
     width:100%;
     height:100vh;
-    background:#6F8972;
+    background:
+linear-gradient(
+rgba(54,72,57,.40),
+rgba(54,72,57,.55)
+),
+url("../assets/images/cover.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat; 
 
     display:flex;
     justify-content:center;
