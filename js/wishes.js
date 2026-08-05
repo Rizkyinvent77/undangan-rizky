@@ -16,7 +16,7 @@ import {
 
 } 
 
-from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 const form = document.getElementById("wishForm");
 
