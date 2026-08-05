@@ -12,19 +12,24 @@ const wishesRef = collection(db, "wishes");
 form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
+    console.log("Submit dimulai");
 
     const name = document.getElementById("name").value.trim();
     const message = document.getElementById("message").value.trim();
 
     if (!name || !message) return;
 
-    try {
+    try { 
 
+        console.log("Sebelum addDoc");
+        
         await addDoc(wishesRef, {
             name: name,
             message: message,
             createdAt: serverTimestamp()
         });
+        
+        console.log("Sesudah addDoc");
 
         form.reset();
 
