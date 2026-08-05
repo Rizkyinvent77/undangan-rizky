@@ -1,46 +1,65 @@
 import { db } from "./firebase.js";
 
 import {
-    collection,
-    addDoc,
+    ref,
+    push,
+    set,
     serverTimestamp
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
 
 const form = document.getElementById("wishForm");
-const wishesRef = collection(db, "wishes");
 
-form.addEventListener("submit", async (e) => {
+
+const wishesRef = ref(db, "wishes");
+
+
+form.addEventListener("submit", async (e)=>{
 
     e.preventDefault();
-    console.log("Submit dimulai");
+
 
     const name = document.getElementById("name").value.trim();
+
     const message = document.getElementById("message").value.trim();
 
-    if (!name || !message) return;
 
-    try { 
+    if(!name || !message) return;
 
-        console.log("Sebelum addDoc");
-        
-        await addDoc(wishesRef, {
-            name: name,
-            message: message,
-            createdAt: serverTimestamp()
+
+    try{
+
+
+        const newWish = push(wishesRef);
+
+
+        await set(newWish, {
+
+            name:name,
+
+            message:message,
+
+            createdAt:serverTimestamp()
+
         });
-        
-        console.log("Sesudah addDoc");
+
 
         form.reset();
 
+
         alert("Terima kasih atas doa dan ucapannya 💚");
 
-    } catch (error) {
+
+    }catch(error){
+
 
         console.error(error);
 
-        alert(error.message);
+
+        alert("Gagal mengirim ucapan.");
+
 
     }
+
 
 });
