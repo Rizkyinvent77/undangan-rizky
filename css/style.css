@@ -780,6 +780,28 @@ body{
 
 }
 
+@keyframes rotateMusic{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+.music-button.playing{
+
+    animation:rotateMusic 4s linear infinite;
+
+}
+
 /* =========================
           FOOTER
 ========================= */
@@ -888,5 +910,29 @@ body{
         width:100%;
 
     }
+
+}
+
+/* =========================
+      SCROLL PROGRESS
+========================= */
+
+.progress-bar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0%;
+
+    height:4px;
+
+    background:#C8A96A;
+
+    z-index:9999;
+
+    transition:width .15s linear;
 
 }

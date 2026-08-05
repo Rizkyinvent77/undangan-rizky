@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 if(musicButton){
 
     musicButton.classList.add("show");
+    musicButton.classList.add("playing");
 
 }
             
@@ -147,6 +148,36 @@ if(cover){
 
 
     }
+    
+    /* ==========================
+      MUSIC CONTROL
+========================== */
+
+if(musicButton && music){
+
+    musicButton.addEventListener("click",()=>{
+
+        if(music.paused){
+
+            music.play();
+
+musicButton.textContent="🎵";
+
+musicButton.classList.add("playing");
+
+        }else{
+
+            music.pause();
+
+musicButton.textContent="🔇";
+
+musicButton.classList.remove("playing");
+
+        }
+
+    });
+
+}
 
 
 });
@@ -219,27 +250,20 @@ lightbox.addEventListener("click",()=>{
 });
 
 /* ==========================
-      MUSIC CONTROL
+      SCROLL PROGRESS
 ========================== */
 
-if(musicButton && music){
+const progressBar = document.getElementById("progressBar");
 
-    musicButton.addEventListener("click",()=>{
+window.addEventListener("scroll",()=>{
 
-        if(music.paused){
+    const scrollTop = window.scrollY;
 
-            music.play();
+    const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
 
-            musicButton.textContent="🎵";
+    const progress = (scrollTop / documentHeight) * 100;
 
-        }else{
+    progressBar.style.width = progress + "%";
 
-            music.pause();
-
-            musicButton.textContent="🔇";
-
-        }
-
-    });
-
-}
+});
