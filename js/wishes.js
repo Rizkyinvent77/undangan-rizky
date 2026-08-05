@@ -57,10 +57,10 @@ alert("FORM DIKIRIM");
 
     }catch(error){
 
-        console.error(error);
+    console.error(error);
 
-        alert("Gagal mengirim ucapan.");
+    alert(error.message);
 
-    }
+}
 
 });
