@@ -28,6 +28,9 @@ const wishesRef = collection(db, "wishes");
 
 form.addEventListener("submit", async (e) => {
 
+console.log("FORM DIKIRIM");
+alert("FORM DIKIRIM");
+
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
