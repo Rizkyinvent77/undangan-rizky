@@ -733,3 +733,160 @@ body{
     border-radius:18px;
 
 }
+
+/* =========================
+      MUSIC BUTTON
+========================= */
+
+.music-button{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#C8A96A;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+    z-index:999;
+
+    display:none;
+
+}
+
+.music-button.show{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* =========================
+          FOOTER
+========================= */
+
+.footer{
+
+    background:#445248;
+
+    color:white;
+
+    text-align:center;
+
+    padding:90px 25px;
+
+}
+
+.footer h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:52px;
+
+    margin-bottom:25px;
+
+}
+
+.footer-text{
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    opacity:.9;
+
+    font-size:17px;
+
+}
+
+.footer h3{
+
+    margin-top:50px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px;
+
+    font-weight:600;
+
+}
+
+.footer h3 span{
+
+    display:block;
+
+    margin:8px 0;
+
+    font-size:34px;
+
+}
+
+/* =========================
+      RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+    h1{
+
+        font-size:56px;
+
+    }
+
+    h1 span{
+
+        font-size:38px;
+
+    }
+
+    .section-title,
+    .couple h2,
+    .gallery h2,
+    .footer h2{
+
+        font-size:42px;
+
+    }
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery-grid img{
+
+        height:260px;
+
+    }
+
+    .gallery-grid img:last-child{
+
+        grid-column:auto;
+
+        width:100%;
+
+    }
+
+}

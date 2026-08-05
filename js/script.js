@@ -96,6 +96,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     const openButton = document.getElementById("openInvitation");
 
     const music = document.getElementById("bgMusic");
+    
+    const musicButton = document.getElementById("musicButton");
 
 
     if(openButton){
@@ -109,9 +111,15 @@ document.addEventListener("DOMContentLoaded",()=>{
 
             if(music){
 
-                music.play();
+    music.play();
 
-            } 
+}
+
+if(musicButton){
+
+    musicButton.classList.add("show");
+
+}
             
             const cover = document.querySelector(".cover");
 
@@ -209,3 +217,29 @@ lightbox.addEventListener("click",()=>{
     lightbox.classList.remove("show");
 
 });
+
+/* ==========================
+      MUSIC CONTROL
+========================== */
+
+if(musicButton && music){
+
+    musicButton.addEventListener("click",()=>{
+
+        if(music.paused){
+
+            music.play();
+
+            musicButton.textContent="🎵";
+
+        }else{
+
+            music.pause();
+
+            musicButton.textContent="🔇";
+
+        }
+
+    });
+
+}
