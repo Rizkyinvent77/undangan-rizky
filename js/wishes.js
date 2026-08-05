@@ -3,8 +3,7 @@ import { db } from "./firebase.js";
 import {
     ref,
     push,
-    set,
-    serverTimestamp
+    set, 
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
 
@@ -39,7 +38,7 @@ form.addEventListener("submit", async (e)=>{
 
             message:message,
 
-            createdAt:serverTimestamp()
+            createdAt: Date.now()
 
         });
 

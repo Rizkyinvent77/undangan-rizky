@@ -8,6 +8,7 @@ import {
 const firebaseConfig = {
     apiKey: "AIzaSyBHVp0CEn_wzFbnuiVopzF98OshcKDBlks",
     authDomain: "rizky-wedding.firebaseapp.com",
+    databaseURL: "https://rizky-wedding-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "rizky-wedding",
     storageBucket: "rizky-wedding.firebasestorage.app",
     messagingSenderId: "158026459321",
