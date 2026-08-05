@@ -936,3 +936,91 @@ body{
     transition:width .15s linear;
 
 }
+
+/* =========================
+      WISHES
+========================= */
+
+.wishes{
+
+    padding:110px 20px;
+
+    background:#F7F5F2;
+
+    text-align:center;
+
+}
+
+.wishes .container{
+
+    max-width:720px;
+
+    margin:auto;
+
+}
+
+.wishes-text{
+
+    margin:20px auto 45px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    max-width:520px;
+
+}
+
+#wishForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+#wishForm input,
+#wishForm textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:white;
+
+    font-size:16px;
+
+    font-family:'Poppins',sans-serif;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+#wishForm input:focus,
+#wishForm textarea:focus{
+
+    box-shadow:0 0 0 3px rgba(200,169,106,.25);
+
+}
+
+#wishForm textarea{
+
+    resize:none;
+
+}
+
+#wishList{
+
+    margin-top:50px;
+
+}

@@ -1,0 +1,63 @@
+import { db } from "./firebase.js";
+
+import {
+
+    collection,
+
+    addDoc,
+
+    serverTimestamp,
+
+    query,
+
+    orderBy,
+
+    onSnapshot
+
+} from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
+
+const form = document.getElementById("wishForm");
+
+const wishList = document.getElementById("wishList");
+
+const wishesRef = collection(db, "wishes");
+
+/* ==========================
+      SEND WISH
+========================== */
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    const message = document.getElementById("message").value.trim();
+
+    if(!name || !message) return;
+
+    try{
+
+        await addDoc(wishesRef,{
+
+            name,
+
+            message,
+
+            createdAt: serverTimestamp()
+
+        });
+
+        form.reset();
+
+        alert("Terima kasih atas doa dan ucapannya 💚");
+
+    }catch(error){
+
+        console.error(error);
+
+        alert("Gagal mengirim ucapan.");
+
+    }
+
+});

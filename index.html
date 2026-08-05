@@ -385,6 +385,46 @@
 
 </section>
 
+<section class="wishes reveal">
+
+    <div class="container">
+
+        <p class="section-subtitle">
+            WISHES
+        </p>
+
+        <h2>Ucapan & Doa</h2>
+
+        <p class="wishes-text">
+            Berikan doa dan ucapan terbaik untuk kami.
+        </p>
+
+        <form id="wishForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Nama"
+                required>
+
+            <textarea
+                id="message"
+                placeholder="Tulis ucapan..."
+                rows="5"
+                required></textarea>
+
+            <button type="submit">
+                Kirim Ucapan
+            </button>
+
+        </form>
+
+        <div id="wishList"></div>
+
+    </div>
+
+</section>
+
 <!-- =========================
         FOOTER
 ========================= -->
@@ -432,6 +472,12 @@
 </button>
 
 <script src="js/script.js"></script>
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/wishes.js"></script>
+
+</body>
 
 </body>
 
