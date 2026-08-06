@@ -270,6 +270,8 @@ window.addEventListener("scroll",()=>{
 
 window.addEventListener("DOMContentLoaded", () => {
 
+    console.log(window.location.href);
+    
     const params = new URLSearchParams(window.location.search);
 
     console.log(params.toString());
