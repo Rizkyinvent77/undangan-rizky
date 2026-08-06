@@ -268,13 +268,22 @@ window.addEventListener("scroll",()=>{
 
 });
 
-const params = new URLSearchParams(window.location.search);
+window.addEventListener("DOMContentLoaded", () => {
 
-const guest = params.get("to");
+    const params = new URLSearchParams(window.location.search);
 
-if (guest) {
+    console.log(params.toString());
 
-    document.getElementById("guestName").textContent =
-        decodeURIComponent(guest);
+    const guest = params.get("to");
 
-}
+    console.log(guest);
+
+    const guestName = document.getElementById("guestName");
+
+    console.log(guestName);
+
+    if (guest && guestName) {
+        guestName.textContent = guest;
+    }
+
+});
