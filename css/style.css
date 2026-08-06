@@ -1053,7 +1053,7 @@ body{
 
     border:1px solid rgba(255,255,255,.35);
 
-    animation:fadeUp .5s ease;
+    animation: cardIn .5s ease forwards;
 
 }
 
@@ -1124,6 +1124,10 @@ body{
     box-shadow:0 12px 30px rgba(0,0,0,.08);
 
     animation:fadeUp .6s ease;
+    
+    opacity:0;
+
+animation:cardIn .5s ease forwards;
 
 }
 
@@ -1141,15 +1145,11 @@ body{
 
 .avatar{
 
-    width:55px;
+    width:58px;
 
-    height:55px;
+    height:58px;
 
     border-radius:50%;
-
-    background:#6b8f71;
-
-    color:white;
 
     display:flex;
 
@@ -1157,9 +1157,15 @@ body{
 
     align-items:center;
 
+    color:white;
+
     font-size:22px;
 
-    font-weight:bold;
+    font-weight:700;
+
+    border:3px solid rgba(255,255,255,.75);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
 
     flex-shrink:0;
 
@@ -1206,5 +1212,149 @@ body{
         transform:translateY(0);
 
     }
+
+}
+
+.wish-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+
+}
+
+.wish-bubble{
+
+    margin-top:18px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:18px 20px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    position:relative;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.05);
+
+}
+
+.wish-bubble::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-8px;
+
+    left:22px;
+
+    width:18px;
+
+    height:18px;
+
+    background:white;
+
+    transform:rotate(45deg);
+
+}
+
+@keyframes cardIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+.empty-wish{
+
+    text-align:center;
+
+    padding:45px 25px;
+
+    color:#6b8f71;
+
+    border:2px dashed rgba(107,143,113,.25);
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.6);
+
+}
+
+#submitWish{
+
+    transition:.3s ease;
+
+}
+
+#submitWish:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+    transform:scale(.98);
+
+}
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:30px;
+
+    transform:translateX(-50%) translateY(100px);
+
+    background:#365039;
+
+    color:#fff;
+
+    padding:14px 24px;
+
+    border-radius:50px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.4s ease;
+
+    z-index:9999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateX(-50%) translateY(0);
 
 }

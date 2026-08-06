@@ -14,6 +14,10 @@ const wishList = document.getElementById("wishList");
 
 const wishTitle = document.getElementById("wishTitle");
 
+const submitButton = document.getElementById("submitWish");
+
+const toast = document.getElementById("toast");
+
 const wishesRef = ref(db, "wishes");
 
 
@@ -33,6 +37,9 @@ form.addEventListener("submit", async (e)=>{
     try{
 
 
+        submitButton.disabled = true;
+submitButton.textContent = "Mengirim...";
+        
         const newWish = push(wishesRef);
 
 
@@ -48,18 +55,24 @@ form.addEventListener("submit", async (e)=>{
 
 
         form.reset();
+        
+        submitButton.disabled = false;
+submitButton.textContent = "Kirim Ucapan";
 
 
-        alert("Terima kasih atas doa dan ucapannya 💚");
-
+        showToast("💚 Terima kasih atas doa dan ucapannya");
+        
 
     }catch(error){
+    
+    submitButton.disabled = false;
+submitButton.textContent = "Kirim Ucapan";
 
 
         console.error(error);
 
 
-        alert("Gagal mengirim ucapan.");
+        showToast("❌ Gagal mengirim ucapan");
 
 
     }
@@ -111,11 +124,38 @@ function getAvatarColor(name){
     return colors[total % colors.length];
 }
 
+function showToast(message){
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
 onValue(wishesRef, (snapshot) => {
 
     wishList.innerHTML = "";
 
-    if (!snapshot.exists()) return;
+    if (!snapshot.exists()) {
+
+    wishList.innerHTML = `
+        <div class="empty-wish">
+            💚<br><br>
+            Jadilah orang pertama yang
+            mengirim ucapan.
+        </div>
+    `;
+
+    wishTitle.textContent = "Ucapan & Doa (0)";
+
+    return;
+}
 
     const data = snapshot.val();
 
@@ -131,29 +171,33 @@ onValue(wishesRef, (snapshot) => {
 
         <div class="wish-card">
 
-            <div class="wish-header">
+    <div class="wish-header">
 
-                <div
-    class="avatar"
-    style="background:${getAvatarColor(wish.name)};">
+        <div
+            class="avatar"
+            style="background:${getAvatarColor(wish.name)};">
 
-    ${wish.name.charAt(0).toUpperCase()}
-
-</div>
-
-                <div>
-
-                    <h3>${wish.name}</h3>
-
-                    <span>${time}</span>
-
-                </div>
-
-            </div>
-
-            <p>${wish.message}</p>
+            ${wish.name.charAt(0).toUpperCase()}
 
         </div>
+
+        <div class="wish-info">
+
+            <h3>${wish.name}</h3>
+
+            <span>${time}</span>
+
+        </div>
+
+    </div>
+
+    <div class="wish-bubble">
+
+        ${wish.message}
+
+    </div>
+
+</div>
 
         `;
 

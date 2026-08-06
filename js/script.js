@@ -267,3 +267,14 @@ window.addEventListener("scroll",()=>{
     progressBar.style.width = progress + "%";
 
 });
+
+const params = new URLSearchParams(window.location.search);
+
+const guest = params.get("to");
+
+if (guest) {
+
+    document.getElementById("guestName").textContent =
+        decodeURIComponent(guest);
+
+}
