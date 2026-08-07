@@ -288,3 +288,92 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+/* ==========================
+      COPY REKENING
+========================== */
+
+const copyButtons = document.querySelectorAll(".copy-btn");
+
+copyButtons.forEach(button => {
+
+    button.addEventListener("click", async () => {
+
+        const number = button.dataset.copy;
+        const originalText = button.innerHTML;
+
+        try{
+
+            await navigator.clipboard.writeText(number);
+
+            button.innerHTML = "✅ Berhasil Disalin";
+            button.disabled = true;
+
+            const toast = document.getElementById("toast");
+
+            toast.textContent = "✅ Nomor rekening berhasil disalin";
+
+            toast.classList.add("show");
+
+            setTimeout(()=>{
+
+                toast.classList.remove("show");
+
+                button.innerHTML = originalText;
+                button.disabled = false;
+
+            },2000);
+
+        }catch(error){
+
+            console.error(error);
+
+        }
+
+    });
+
+});
+
+/* ==========================
+      SCROLL TO TOP
+========================== */
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const scrollTopButton = document.getElementById("scrollTop");
+
+    console.log("Scroll Button:", scrollTopButton);
+
+    if (!scrollTopButton) return;
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 600) {
+
+            scrollTopButton.classList.add("show");
+
+        } else {
+
+            scrollTopButton.classList.remove("show");
+
+        }
+
+    });
+
+    scrollTopButton.addEventListener("click",()=>{
+
+    const coupleSection = document.querySelector(".couple");
+
+    if(coupleSection){
+
+        coupleSection.scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    }
+
+});
+
+});
