@@ -599,12 +599,13 @@ body{
 
     opacity:0;
 
-    transform:translateY(40px);
+    transform:translateY(60px);
 
-    transition:1s ease;
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
 
 }
-
 
 .reveal.show{
 

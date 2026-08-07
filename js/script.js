@@ -1,5 +1,3 @@
-alert("SCRIPT VERSI BARU");
-
 /* ==========================
       COUNTDOWN
 ========================== */
@@ -194,24 +192,23 @@ const revealElements = document.querySelectorAll(".reveal");
 
 const revealOnScroll = () => {
 
-
-    revealElements.forEach((element)=>{
-
+    revealElements.forEach((element,index)=>{
 
         const windowHeight = window.innerHeight;
 
         const elementTop = element.getBoundingClientRect().top;
 
-
         if(elementTop < windowHeight - 100){
 
-            element.classList.add("show");
+            setTimeout(()=>{
+
+                element.classList.add("show");
+
+            },index*120);
 
         }
 
-
     });
-
 
 };
 
