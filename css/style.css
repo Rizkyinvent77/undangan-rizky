@@ -1078,11 +1078,32 @@ body{
 
 .footer-love{
 
-    font-size:42px;
+    font-size:34px;
 
-    margin:45px 0;
+    margin:30px 0;
 
-    animation:pulseLove 2.5s infinite;
+    color:#7E9B84;
+
+    text-shadow:
+        0 0 10px rgba(126,155,132,.25);
+
+    animation:heartbeat 2.8s ease-in-out infinite;
+
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+    }
 
 }
 
@@ -1101,6 +1122,34 @@ body{
     opacity:.75;
 
     letter-spacing:2px;
+
+}
+
+.footer h1{
+
+    animation:fadeName 5s ease-in-out infinite;
+
+}
+
+@keyframes fadeName{
+
+    0%,100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.82;
+
+    }
+
+}
+
+.footer{
+
+    padding-bottom:160px;
 
 }
 
@@ -1363,7 +1412,7 @@ body{
 
     box-shadow:0 12px 30px rgba(0,0,0,.08);
 
-    animation:fadeUp .6s ease;
+    animation:fadeUp .6s ease-out;
     
     opacity:0;
 
@@ -1718,5 +1767,16 @@ transition:.35s ease;
 #scrollTop:hover{
 
     transform:translateY(-4px);
+
+}
+
+.footer-divider{
+
+    width:90px;
+    height:1px;
+
+    background:rgba(68,82,72,.25);
+
+    margin:40px auto 30px;
 
 }

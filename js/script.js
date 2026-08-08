@@ -4,7 +4,7 @@
 
 const countdown = () => {
 
-    const targetDate = new Date("2026-08-28T08:00:00").getTime();
+    const targetDate = new Date("2026-08-23T08:00:00+07:00").getTime();
 
     const daysEl = document.getElementById("days");
     const hoursEl = document.getElementById("hours");
